@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class node {
+            constructor(key){
+                this.key = key;
+                this.left = null;
+                this.right = null;
+            }
+        }
+
+        class BinarySearchTree
+        {             
+             constructor()
+             {
+               this.root = null;
+              }
+ 
+   
+        insert(key)
+        {
+         var newNode = new Node(key);
+           
+         if(this.root === null)
+            this.root = newNode;
+         else
+            this.insertNode(this.root, newNode);
+        }
+ 
+
+        insertNode(node, newNode)
+        {
+    
+         if(newNode.key < node.key)
+         {
+        
+            if(node.left === null)
+               node.left = newNode;
+             else
+               this.insertNode(node.left, newNode);
+         }
+ 
+        else
+         {
+        
+            if(node.right === null)
+               node.right = newNode;
+             else
+               this.insertNode(node.right,newNode);
+         }
+        }   
+        search(node, key)
+        {
+        
+         if(node === null)
+             return null;
+ 
+         else if(key < node.key)
+             return this.search(node.left, key);
+ 
+        else if(data > node.data)
+             return this.search(node.right, key);
+ 
+        else
+             return node;
+        }
+}
+       
+    </script>
+</body>
+</html>
